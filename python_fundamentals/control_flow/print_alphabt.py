@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
-print(
-    '{0}'.format(
-        ''.join(
-            chr(i)
-            for i in range(ord('a'), ord('z') + 1)
-            if chr(i) not in 'qe'
-        )
-    ),
-    end='',
-)
+
+
+for alpha in range(97, 123):
+    if alpha != 101 and alpha != 113:
+        print("{:s}".format(chr(alpha)), end="")

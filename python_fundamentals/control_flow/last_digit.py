@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
+
+
 number = __import__('random').randint(-10000, 10000)
 
-last = int(__import__('math').fmod(number, 10))
-
-if last > 5:
-    print(f"Last digit of {number} is {last} and is greater than 5")
-elif last == 0:
-    print(f"Last digit of {number} is {last} and is 0")
+if number >= 0:
+    r = number % 10
 else:
-    print(f"Last digit of {number} is {last} and is less than 6 and not 0")
+    r = number % -10
+if r > 5:
+    m = "and is greater than 5"
+elif r == 0:
+    m = "and is 0"
+elif r < 6 and r != 0:
+    m = "and is less than 6 and not 0"
+print("Last digit of {} is {} {}".format(number, r, m))
